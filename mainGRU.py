@@ -3,10 +3,7 @@ import torch
 import torch.nn as nn
 import torchvision
 import torchvision.transforms as transforms
-import matplotlib.pyplot as plt
-
 import pytorch_lightning as pl
-import torch.nn.functional as F
 from torchmetrics.functional import accuracy
 from torch.utils.data import DataLoader, random_split
 
@@ -105,5 +102,5 @@ if __name__ == '__main__':
     trainer.fit(model)
     end_time = time.time()
     elapsed_time = end_time - start_time
-    print(f"Czas uczenia: {elapsed_time:.2f} sekund")
+    print(f"Model learning time: {elapsed_time:.2f} s")
     trainer.test(model)
